@@ -109,6 +109,10 @@ section {
   .post-health{
     min-width: 100px;
     position: relative;
+    padding: 3px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background: #f7f7f7;
     ul{
       list-style: none;
       padding: 0;
@@ -187,6 +191,7 @@ section {
         text-align: center;
         border-radius: 3px;
         border: 1px solid #ccc;
+        padding: 8px 3px;
         transition: all ease-in-out .1s;
         -webkit-transition: all ease-in-out .1s;
         -moz-transition: all ease-in-out .1s;
@@ -239,7 +244,7 @@ section {
         color: #333333;
         border: 1px solid #ccc;
         border-radius: 3px;
-        padding: 3px;
+        padding: 8px 3px;
         &:hover,
         &:focus{
           text-decoration: none;
