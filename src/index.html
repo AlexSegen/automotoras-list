@@ -72,7 +72,7 @@
 					</thead>
 					<tbody>
 						<tr v-for="item in cars">
-							<td>{{item}}</td>
+							<td>{{item.id}}</td>
 							<td>
 								<a href="#!" title="Ver Publicación"> 650087 /
 									<br>AA0001 </a>
@@ -91,22 +91,27 @@
 									</div>
 								</div>
 							</td>
-							<td>10.000 Kms</td>
-							<td>$ 15.000.000</td>
-							<td>300</td>
+							<td>{{item.km}} Kms</td>
+							<td>{{item.price}}</td>
+							<td>{{item.vistas}}</td>
 							<td>
-								<span class="post-days green">
-									<!--green o red-->
-									20
-								</span>
+								
+									<span v-if="item.dp > item.dpv" class="post-days red">
+										{{item.dp}}
+									</span>								
+									<span v-else class="post-days green">
+										{{item.dp}}
+									</span>
+
+
 							</td>
-							<td>30</td>
+							<td>{{item.dpv}}</td>
 							<td class="item-leads">
-								<div class="lead-prom">20</div>
+								<div class="lead-prom">{{item.mails + item.calls}}</div>
 								<span>
-									<i class="fa fa-envelope"></i> 5</span> +
+									<i class="fa fa-envelope"></i> {{item.mails}}</span> +
 								<span>
-									<i class="fa fa-phone"></i> 15</span>
+									<i class="fa fa-phone"></i> {{item.calls}}</span>
 							</td>
 							<td>
 								<div class="post-health">
@@ -123,16 +128,26 @@
 										<li>
 											<i class="fa fa-comment-o" aria-hidden="true" title="Puntaje de comentario"></i> 5%</li>
 									</ul>
-									<!-- 
-							<i class="fa fa-battery-three-full health-score high" title="Salud Alta" aria-hidden="true"></i>
-							
-							<i class="fa fa-battery-three-quarters health-score high" title="Salud Alta" aria-hidden="true"></i>
+									
+									<!--  -->
 
-							<i class="fa fa-battery-quarters health-score low" title="Salud Baja" aria-hidden="true"></i> -->
+									
 
-									<i class="fa fa-battery-half health-score-icon medium" title="Salud Media" aria-hidden="true"></i>
+									
+									
 
-									<span class="health-score">%55</span>
+									
+								
+								
+									<!-- <i v-if="item.health = 100" class="fa fa-battery-full health-score high" title="Salud Alta" aria-hidden="true"></i> -->
+
+									<i v-if="item.health < 81 && item.health > 49"  class="fa fa-battery-half health-score-icon medium" title="Salud Media" aria-hidden="true"></i>
+
+									<i v-if="item.health > 80" class="fa fa-battery-3 health-score-icon high" title="Salud Alta" aria-hidden="true"></i>
+
+									<i v-if="item.health < 50" class="fa fa-battery-quarter health-score-icon low" title="Salud Baja" aria-hidden="true"></i> 
+
+									<span class="health-score">%{{item.health}}</span>
 
 								</div>
 							</td>
