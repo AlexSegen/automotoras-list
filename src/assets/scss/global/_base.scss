@@ -182,16 +182,21 @@ section {
   }
   >tbody>tr>td{
     border-top: none;
+    
+    &:nth-child(1){
+      text-align: center;
+    }
 
     &:nth-child(2){
       a {
         color: #333333;
         display: block;
-        padding: 5px;
         text-align: center;
         border-radius: 3px;
         border: 1px solid #ccc;
         padding: 8px 3px;
+        background: #fdfdfd;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.18);
         transition: all ease-in-out .1s;
         -webkit-transition: all ease-in-out .1s;
         -moz-transition: all ease-in-out .1s;
