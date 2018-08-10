@@ -86,9 +86,9 @@
 										</a>
 									</div>
 									<div class="media-body">
-										<h4 class="media-heading">Toyota YARIS</h4>
-										<span>1.5 GLI AUTO</span>
-										<span class="caryear">2014</span>
+										<h4 class="media-heading">{{item.carmark}} {{item.carmodel}}</h4>
+										<span>1.5 GLI <span>{{ item.auto ? 'AUTO':'MANUAL'}} </span></span>
+										<span class="caryear">{{item.caryear}}</span>
 									</div>
 								</div>
 							</td>
@@ -109,10 +109,8 @@
 							<td>{{item.dpv}}</td>
 							<td class="item-leads">
 								<div class="lead-prom">{{item.mails + item.calls}}</div>
-								<span>
-									<i class="fa fa-envelope"></i> {{item.mails}}</span> +
-								<span>
-									<i class="fa fa-phone"></i> {{item.calls}}</span>
+								<span title="Mensajes recibidos"><i class="fa fa-envelope"></i> {{item.mails}}</span> +
+								<span title="Llamadas recibidas"><i class="fa fa-phone"></i> {{item.calls}}</span>
 							</td>
 							<td>
 								<div class="post-health">
