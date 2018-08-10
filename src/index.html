@@ -62,7 +62,9 @@
 							</th>
 							<th>Salud de
 								<br>Publicación
-								<i class="fa fa-question-circle health-question"></i>
+								<i class="fa fa-question-circle health-question" data-container="body" data-toggle="popover" data-placement="bottom"  data-trigger="hover"
+								data-content="Compuesto por la fotografías (45%), fotos 360 (5%), Uso de minúsculas en description de vehículo (25%) y largo de comentarios (25%).">
+								</i>
 							</th>
 							<th>Aviso</th>
 							<th>
@@ -75,13 +77,13 @@
 						<tr v-for="item in cars">
 							<td>{{item.id}}</td>
 							<td>
-								<a href="#!" title="Ver Publicación"> 650087 /
+								<a href="#!" title="Ver Publicación" target="_blank"> 650087 /
 									<br>AA0001 </a>
 							</td>
 							<td>
 								<div class="media car-details">
 									<div class="media-left">
-										<a href="">
+										<a href="#!" title="Ver Publicación" target="_blank">
 											<img class="media-object" src="./assets/img/car.jpg" alt="">
 										</a>
 									</div>
@@ -96,15 +98,12 @@
 							<td>{{item.price | numeral('$0,0') }}</td>
 							<td>{{item.vistas}}</td>
 							<td>
-								
-									<span v-if="item.dp > item.dpv" class="post-days red">
-										{{item.dp}}
-									</span>								
-									<span v-else class="post-days green">
-										{{item.dp}}
-									</span>
-
-
+							<span v-if="item.dp > item.dpv" class="post-days red">
+								{{item.dp}}
+							</span>								
+							<span v-else class="post-days green">
+								{{item.dp}}
+							</span>
 							</td>
 							<td>{{item.dpv}}</td>
 							<td class="item-leads">
@@ -117,8 +116,8 @@
 
 									<ul>
 										<li>
-											<i class="fa fa-camera" aria-hidden="true" title="Fotos agregadas"></i> 20
-											<strong>/25</strong>
+											<i class="fa fa-camera" aria-hidden="true" title="Fotos agregadas"></i> <strong>20</strong>
+											/25
 										</li>
 										<li>
 											<!-- <i class="fa fa-camera-retro" aria-hidden="true" title="Fotos 360"></i> 360 -->
