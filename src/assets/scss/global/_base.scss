@@ -42,6 +42,11 @@ section {
 .table-carlist{
   font-size: 12px;
 
+  
+  .health-question{
+    cursor: pointer;
+  }
+
   .post-days{
     &.green{
       color: #8BC34A;
@@ -83,7 +88,6 @@ section {
         }
       }
     }
-
     .health-score{
       position: absolute;
       right: 12px;
