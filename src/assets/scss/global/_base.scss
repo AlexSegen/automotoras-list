@@ -26,23 +26,255 @@ section {
   position: relative;
 }
 
-.intro{
-  .brand{
-    max-width:200px;
-    height:auto;
-    margin-right: auto;
-    margin-left:auto;
-    .logo{
-      max-width:100%;
-      height: auto;
-      display: block;
+.table-cutom{
+  >thead>tr>th{
+    //vertical-align: middle;
+  }
+  >tbody>tr>td{
+    vertical-align: middle;
+  }
+}
+
+
+.table-carlist{
+  font-size: 12px;
+
+  .post-days{
+    &.green{
+      color: #8BC34A;
+    }
+    &.red{
+      color: #f44336;
     }
   }
-  .small{
-    font-size:$font-size * .8;
-    opacity: .5;
+
+  .print-icon{
+    max-width: 50px;
+    margin: 0 auto;
+    display: block;
+    -webkit-filter: grayscale(60%);
+    filter: grayscale(60%);
+    transition: all ease-in-out .1s;
+    -webkit-transition: all ease-in-out .1s;
+    -moz-transition: all ease-in-out .1s;
+    &:hover,
+    &:focus
+    {
+      -webkit-filter: grayscale(0%);
+      filter: grayscale(0%);
+    }
   }
-  .btn{
-    min-width:165px;
+
+  .post-health{
+    min-width: 80px;
+    position: relative;
+    ul{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      >li{
+        >i{
+          color: $theme05;
+        }
+      }
+    }
+
+    .health-score{
+      position: absolute;
+      right: 5px;
+      top: 10px;
+      transform: rotate(-90deg);
+      font-size: 25px;
+      cursor: pointer;
+      &.high{
+        color: #8BC34A;
+      }
+      &.medium{
+        color: #FBC02D;
+      }
+      &.low{
+        color: #f44336;
+      }
+    }
+
+  }
+
+  .item-leads{
+    text-align: center;
+    .lead-prom{
+      //color: $theme;
+      color: #111111;
+      font-weight: bold;
+      text-align: center;
+      font-size: 20px;
+    }
+    span{
+      //display: block;
+      i{
+        margin-right: 3px;
+        color: $theme05;
+      }
+    }
+
+  }
+  >tbody{
+    color: #666;
+  }
+
+  >thead>tr>th{
+    text-align: center;
+    .fa{
+      color: $theme;
+    }
+  }
+  >tbody>tr>td{
+    
+    &:nth-child(3){
+      max-width: 200px;
+    }
+    //Kilometraje
+    &:nth-child(4){
+      text-align: right;
+    }
+    //Precio
+    &:nth-child(5){
+      text-align: right;
+      min-width: 100px;
+    }
+    //Vistas
+    &:nth-child(6){
+      text-align: center;
+    }
+    //Días Publicados
+    &:nth-child(7){
+      font-size: 20px;
+      color: #111111;
+      text-align: center;
+      font-weight: bold;
+    }
+    //Días promedio venta
+    &:nth-child(8){
+      text-align: center;
+    }
+    //Leads
+    &:nth-child(9){
+      //text-align: left;
+    }
+    //Salud
+    &:nth-child(10){
+      //min-width: 100px;
+    }
+    //Imprimir
+    &:nth-child(11){
+      text-align: center;
+      a {
+        display: block;
+        color: #333333;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        padding: 3px;
+        &:hover,
+        &:focus{
+          text-decoration: none;
+          background: #eee;
+        }
+      }
+    }
+    
+  }
+
+  .car-details{
+
+    .media-body{
+
+      .media-heading{
+        font-size: 12px;
+        margin-bottom: 2px;
+      }
+      span{
+        font-size: 11px;
+      }
+      .caryear{
+        font-weight: 600;
+      }
+    }
+
+    .media-object{
+      max-width: 80px;
+      height: auto;
+      border-radius: 2px;
+    }
+  }
+
+}
+
+/* Checkbox Styles */
+
+.custom-checkbox {
+  position: absolute; // take it out of document flow
+  opacity: 0; // hide it
+
+  & + label {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  // Box.
+  & + label:before {
+    content: '';
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 1px solid #ccc;
+  }
+
+  // Box hover
+  &:hover + label:before {
+    background: $theme;
+  }
+  
+  // Box focus
+  &:focus + label:before {
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+  }
+
+  // Box checked
+  &:checked + label:before {
+    background: $theme;
+  }
+  
+  // Disabled state label.
+  &:disabled + label {
+    color: #b8b8b8;
+    cursor: auto;
+  }
+
+  // Disabled box.
+  &:disabled + label:before {
+    box-shadow: none;
+    background: #ddd;
+  }
+
+  // Checkmark. Could be replaced with an image
+  &:checked + label:after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 9px;
+    background: white;
+    width: 2px;
+    height: 2px;
+    box-shadow: 
+      2px 0 0 white,
+      4px 0 0 white,
+      4px -2px 0 white,
+      4px -4px 0 white,
+      4px -6px 0 white,
+      4px -8px 0 white;
+    transform: rotate(45deg);
   }
 }
