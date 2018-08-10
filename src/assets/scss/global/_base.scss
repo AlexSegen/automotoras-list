@@ -52,6 +52,40 @@ section {
 .table-carlist{
   font-size: 12px;
 
+  .btn-details{
+      color: #333333;
+      display: block;
+      text-align: center;
+      border-radius: 3px;
+      border: 1px solid rgba(#ccc,.5);
+      padding: 8px 3px;
+      background: #fdfdfd;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.18);
+      transition: all ease-in-out .1s;
+      -webkit-transition: all ease-in-out .1s;
+      -moz-transition: all ease-in-out .1s;
+      &:hover,
+      &:focus{
+        color: #666666;
+        background: #eee;
+        text-decoration: none;
+      }
+  }
+
+  .btn-print{
+      display: block;
+      color: #333333;
+      border: 1px solid rgba(#ccc,.5);
+      border-radius: 3px;
+      padding: 8px 3px;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.18);
+      &:hover,
+      &:focus{
+        text-decoration: none;
+        background: #eee;
+      }
+  }
+
   .icon360 {
     width: 18px;
     height: 15px;
@@ -110,9 +144,9 @@ section {
     min-width: 100px;
     position: relative;
     padding: 3px;
-    border: 1px solid #ddd;
+    border: 1px solid rgba(#ccc,.5);
     border-radius: 3px;
-    background: #f7f7f7;
+    //background: #f7f7f7;
     ul{
       list-style: none;
       padding: 0;
@@ -188,25 +222,6 @@ section {
     }
 
     &:nth-child(2){
-      a {
-        color: #333333;
-        display: block;
-        text-align: center;
-        border-radius: 3px;
-        border: 1px solid #ccc;
-        padding: 8px 3px;
-        background: #fdfdfd;
-        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.18);
-        transition: all ease-in-out .1s;
-        -webkit-transition: all ease-in-out .1s;
-        -moz-transition: all ease-in-out .1s;
-        &:hover,
-        &:focus{
-          color: #666666;
-          background: #eee;
-          text-decoration: none;
-        }
-      }
     }
     
     &:nth-child(3){
@@ -244,18 +259,7 @@ section {
     //Imprimir
     &:nth-child(11){
       text-align: center;
-      a {
-        display: block;
-        color: #333333;
-        border: 1px solid #ccc;
-        border-radius: 3px;
-        padding: 8px 3px;
-        &:hover,
-        &:focus{
-          text-decoration: none;
-          background: #eee;
-        }
-      }
+
     }
     
   }
