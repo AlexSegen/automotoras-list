@@ -52,7 +52,15 @@ section {
 .table-carlist{
   font-size: 12px;
 
-  
+  .icon360 {
+    width: 18px;
+    height: 15px;
+    float: left;
+    margin-right: 5px;
+    background: url('../img/icons/360-degree.png');
+    background-size: cover;
+  }
+
   .health-question{
     cursor: pointer;
   }
@@ -174,12 +182,18 @@ section {
     &:nth-child(2){
       a {
         color: #333333;
+        display: block;
+        padding: 5px;
+        text-align: center;
+        border-radius: 3px;
+        border: 1px solid #ccc;
         transition: all ease-in-out .1s;
         -webkit-transition: all ease-in-out .1s;
         -moz-transition: all ease-in-out .1s;
         &:hover,
         &:focus{
           color: #666666;
+          background: #eee;
           text-decoration: none;
         }
       }

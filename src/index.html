@@ -20,6 +20,7 @@
 	<meta name="twitter:site" content="" />
 	<link href="./assets/css/app.css" rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue-numeral-filter/dist/vue-numeral-filter.min.js"></script>
 </head>
 
 <body>
@@ -91,8 +92,8 @@
 									</div>
 								</div>
 							</td>
-							<td>{{item.km}} Kms</td>
-							<td>{{item.price}}</td>
+							<td>{{item.km | numeral('0,0') }} Kms</td>
+							<td>{{item.price | numeral('$0,0') }}</td>
 							<td>{{item.vistas}}</td>
 							<td>
 								
@@ -122,23 +123,14 @@
 											<strong>/25</strong>
 										</li>
 										<li>
-											<i class="fa fa-camera-retro" aria-hidden="true" title="Fotos 360"></i> 360
+											<!-- <i class="fa fa-camera-retro" aria-hidden="true" title="Fotos 360"></i> 360 -->
+											<div class="icon360" title="Fotos 360"></div>
 											<strong>NO</strong>
 										</li>
 										<li>
-											<i class="fa fa-comment-o" aria-hidden="true" title="Puntaje de comentario"></i> 5%</li>
+											<i class="fa fa-comment-o" aria-hidden="true" title="Puntaje en comentario"></i> 5%</li>
 									</ul>
-									
-									<!--  -->
 
-									
-
-									
-									
-
-									
-								
-								
 									<!-- <i v-if="item.health = 100" class="fa fa-battery-full health-score high" title="Salud Alta" aria-hidden="true"></i> -->
 
 									<i v-if="item.health < 81 && item.health > 49"  class="fa fa-battery-half health-score-icon medium" title="Salud Media" aria-hidden="true"></i>
@@ -157,8 +149,8 @@
 								</a>
 							</td>
 							<td class="text-center">
-								<input class="custom-checkbox" id="check" type="checkbox" value="">
-								<label for="check"></label>
+								<input class="custom-checkbox" :id="'check'+item.dpv" type="checkbox" value="">
+								<label :for="'check'+item.dpv"></label>
 							</td>
 
 						</tr>
