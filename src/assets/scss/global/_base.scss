@@ -30,6 +30,9 @@ section {
   >thead>tr>th{
     //vertical-align: middle;
   }
+  >tbody>tr{
+    height: 80px;
+  }
   >tbody>tr>td{
     vertical-align: middle;
   }
@@ -66,7 +69,7 @@ section {
   }
 
   .post-health{
-    min-width: 80px;
+    min-width: 100px;
     position: relative;
     ul{
       list-style: none;
@@ -75,14 +78,23 @@ section {
       >li{
         >i{
           color: $theme05;
+          margin-right: 5px;
+          opacity: .7;
         }
       }
     }
 
     .health-score{
       position: absolute;
+      right: 12px;
+      bottom: 2px;
+      font-size: 10px;
+    }
+
+    .health-score-icon{
+      position: absolute;
       right: 5px;
-      top: 10px;
+      top: 5px;
       transform: rotate(-90deg);
       font-size: 25px;
       cursor: pointer;
@@ -128,6 +140,20 @@ section {
     }
   }
   >tbody>tr>td{
+
+    &:nth-child(2){
+      a {
+        color: #333333;
+        transition: all ease-in-out .1s;
+        -webkit-transition: all ease-in-out .1s;
+        -moz-transition: all ease-in-out .1s;
+        &:hover,
+        &:focus{
+          color: #666666;
+          text-decoration: none;
+        }
+      }
+    }
     
     &:nth-child(3){
       max-width: 200px;
@@ -200,7 +226,7 @@ section {
     }
 
     .media-object{
-      max-width: 80px;
+      max-width: 70px;
       height: auto;
       border-radius: 2px;
     }
